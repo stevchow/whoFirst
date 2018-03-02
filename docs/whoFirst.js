@@ -1,14 +1,14 @@
-var p1Button = document.querySelector("#p1");
-var p2Button = document.getElementById("p2");
-var resetButton = document.getElementById("reset");
-var p1Display = document.querySelector("#p1Display");
-var p2Display = document.querySelector("#p2Display");
-var numInput = document.querySelector("input");
-var winningScoreDisplay = document.querySelector("p span");
-var p1Score = 0;
-var p2Score = 0;
-var gameOver = false;
-var winningScore = 5;
+let p1Button = document.querySelector("#p1");
+let p2Button = document.getElementById("p2");
+let resetButton = document.getElementById("reset");
+let p1Display = document.querySelector("#p1Display");
+let p2Display = document.querySelector("#p2Display");
+let numInput = document.querySelector("input");
+let winningScoreDisplay = document.querySelector("p span");
+let p1Score = 0;
+let p2Score = 0;
+let gameOver = false;
+let winningScore = 5;
 
 
 p1Button.addEventListener("click", function () {
