@@ -12,7 +12,6 @@ let winningScore = 5;
 
 
 p1Button.addEventListener("click", function () {
-	masterKill();
 	if (!gameOver) {
 		p1Score++;
 		if (p1Score === winningScore) {
@@ -21,10 +20,10 @@ p1Button.addEventListener("click", function () {
 		}
 		p1Display.textContent = p1Score;
 	}
+	masterKill();
 });
 
 p2Button.addEventListener("click", function () {
-	masterKill();
 	if (!gameOver) {
 		p2Score++;
 		if (p2Score === winningScore) {
@@ -33,6 +32,7 @@ p2Button.addEventListener("click", function () {
 		}
 		p2Display.textContent = p2Score;
 	}
+	masterKill();
 });
 
 resetButton.addEventListener("click", function () {
@@ -56,7 +56,7 @@ numInput.addEventListener("change", function () {
 });
 
 const masterKill = () => {
-	if((p1Score === 0 && p2Score === winningScore) || (p2Score === 0 && p1Score === Number(winningScore))){
-	alert("Master Kill");
+	if ((p1Score === 0 && p2Score === winningScore) || (p2Score === 0 && p1Score === Number(winningScore))) {
+		alert("Master Kill");
 	}
 }
