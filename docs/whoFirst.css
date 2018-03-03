@@ -51,6 +51,37 @@ background: linear-gradient(to left, #3A6073, #16222A);
 	box-shadow: inset 2px 2px 10px #000000;
 }
 
+@media (max-width: 700px){
+	.cardboard{
+		margin:10px 0;
+		padding:1.23rem;
+	}
+	#p1Display, #p2Display{
+		margin: 0;
+		margin-bottom: -40px;
+		font-size: 4rem;
+		display: block;
+		height: 7rem;
+	}
+	.monsterDisplay{
+		background: #16222A; 
+		position: absolute;
+		color:rgb(224, 28, 28);
+		top:0;
+		left:0;
+		height: 100%;
+		width: 100%;
+		font-weight: 800;
+		font-size: 5rem;
+		word-wrap: break-word;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		animation: blinker 0.13s linear infinite;
+	}
+}
+
 .winner {
 	color:rgb(51, 255, 51);
 }
