@@ -9,6 +9,8 @@ let p1Score = 0;
 let p2Score = 0;
 let gameOver = false;
 let winningScore = 5;
+const monsterSound = new Audio("audio/monster.wav");
+const displayBlock = document.querySelector('.displayBlock');
 
 
 p1Button.addEventListener("click", function () {
@@ -20,7 +22,7 @@ p1Button.addEventListener("click", function () {
 		}
 		p1Display.textContent = p1Score;
 	}
-	masterKill();
+	monsterKill();
 });
 
 p2Button.addEventListener("click", function () {
@@ -32,7 +34,7 @@ p2Button.addEventListener("click", function () {
 		}
 		p2Display.textContent = p2Score;
 	}
-	masterKill();
+	monsterKill();
 });
 
 resetButton.addEventListener("click", function () {
@@ -55,8 +57,21 @@ numInput.addEventListener("change", function () {
 	reset();
 });
 
-const masterKill = () => {
+const monsterKill = () => {
 	if ((p1Score === 0 && p2Score === winningScore) || (p2Score === 0 && p1Score === Number(winningScore))) {
-		alert("Master Kill");
+		monsterDisplay();
+		monsterSound.volume = 0.1;
+		monsterSound.play();
+		monsterSound.currentTime = 0;
 	}
 }
+
+function monsterDisplay(){
+	displayBlock.classList.add('monsterDisplay');
+	displayBlock.textContent = "MONSTER KILL!!!";
+	setTimeout(()=>{
+		displayBlock.classList.remove('monsterDisplay');
+		displayBlock.textContent = "";
+	}, 1218);
+}
+
